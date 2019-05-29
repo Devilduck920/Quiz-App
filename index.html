@@ -6,5 +6,32 @@
         <meta name="viewport" content="width=device-width">
         <meta name="quizz" content="this is my quizz description, yay quizz">
         <link rel="stylesheet" href="main.css" type="text/css">
+        
     </head>
+    <body>
+        
+        <header class="headerRow">
+            <div class="hud">
+                <ul>
+                    <li>Question: <span class="questionNumber">0/10 </span></li>
+                    <li>Score: <span class="score">0</span></li>
+                </ul>
+            </div>
+        
+        </header>
+        <main role="quiz">
+            <div class="textContainer">
+                <section class="backgroundSection">
+                        <h1>Think you know Disney?</h1>
+                        <button type="button" class="introButton"> Begin</button>
+                </section>
+            </div>
+            <div class="quizQuestion"></div>
+        </main>
+        <footer class="bgFooter">
+            <img src="images/donaldDuck.png" alt="donaldResetIcon" class="donaldDuck">
+        </footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script scr="main.js"></script>
+    </body>
 </html>
