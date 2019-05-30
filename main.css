@@ -28,23 +28,48 @@ body{
     color:rgb(253, 231, 34);
 }
 div.textContainer > section > h1{
-    font-size: 40px;
+    font-size: 35px;
     padding-top: 75px;
 }
-.nextButton{
-    margin-top:85px;
+.nextButton{  
+    position:relative;
+        top:35px;
+        right:25px;
     font-size:18px;
     font-weight: bold;
     border-radius:5px;
     height:40px;
     width:100px;
-    transition: all 0.3s ease;
+    transition: all 0.4Ss ease;
     background-color: whitesmoke;
 }
+
 .nextButton:hover{
-    opacity:0.8;
+    opacity:0.9;
     background-color: #363946;
     color: #ebca52;
+}
+.nextButton:active{
+    opacity:0.6;
+    background-color: #363946;
+    color: #ebca52;
+}
+.hiddenMickey{
+    height:50px;
+    position:relative;
+        top:150px;
+        left:60px;
+    opacity:0.0;
+}
+.hiddenMickey:hover{
+    opacity:1.0;
+}
+
+.donaldDuck{
+    position:relative;
+        left:5px;
+    height:100px;
+    width:100px;
 }
 .bgFooter{
     margin: 5% 2% 0 2%;
@@ -52,8 +77,9 @@ div.textContainer > section > h1{
     position: relative;
         top:20px;
 }
-.donaldDuck{
-    margin-bottom:10%;
-    height:100px;
-    width:100px;
+a.homeIcon:hover{
+    opacity:0.8;
+}
+a.homeIcon:active{
+    opacity:0.6;
 }
