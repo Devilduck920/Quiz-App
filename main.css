@@ -3,9 +3,10 @@
     margin:0;
     text-align: center;
     list-style: none;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
 }
 body{
-    font-family: 'Courier New', Courier, monospace;
     background-color: rgba(173, 216, 230, 0.781);
 }
 .headerRow{
@@ -13,73 +14,42 @@ body{
     height:55px;
     border-radius: 5px;
     margin: 2% 2% 10% 2%;
-}
-.hud > ul > li  {
     font-size: 23px;
     font-weight:bold;
 }
 .backgroundSection {
+    color:rgb(253, 231, 34);
+    border: 1px black solid;
     background-color: rgba(127, 132, 182, 0.431);
-    height:400px;
+    height:60vh;
     border-radius: 5px;
     margin: 0 2% 0 2%;
+    padding-bottom:25px;
 }
-.textContainer{
-    color:rgb(253, 231, 34);
+h1{
+    font-size:45px;
+    padding-top:75px;
 }
-div.textContainer > section > h1{
-    font-size: 35px;
-    padding-top: 75px;
-}
-.nextButton{  
-    position:relative;
-        top:45px;
-        right:25px;
-    font-size:18px;
-    font-weight: bold;
-    border-radius:5px;
-    height:40px;
-    width:100px;
-    transition: all 0.4Ss ease;
-    background-color: whitesmoke;
+.quiz, .summary{
+    display:none;
 }
 
-.nextButton:hover{
-    opacity:0.9;
-    background-color: #363946;
-    color: #ebca52;
-}
-.nextButton:active{
-    opacity:0.6;
-    background-color: #363946;
-    color: #ebca52;
-}
 .hiddenMickey{
     height:50px;
-    position:relative;
-        top:150px;
-        left:60px;
     opacity:0.0;
 }
 .hiddenMickey:hover{
     opacity:1.0;
-}
-
-.donaldDuck{
-    position:relative;
-        left:5px;
-    height:100px;
-    width:100px;
-}
-.bgFooter{
-    margin: 5% 2% 0 2%;
-    border-radius: 5px;
-    position: relative;
-        top:20px;
 }
 a.homeIcon:hover{
     opacity:0.8;
 }
 a.homeIcon:active{
     opacity:0.6;
+}
+.donaldDuck{
+    position:relative;
+        top:5px;
+    height:95px;
+    width:95px;
 }

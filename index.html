@@ -4,37 +4,59 @@
         <title></title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width">
-        <meta name="quizz" content="this is my quizz description, yay quizz">
         <link rel="stylesheet" href="main.css" type="text/css">
         
     </head>
     <body>  
         <header class="headerRow">
-            <div class="hud">
-                <ul>
-                    <li>Question: <span class="questionNumber">0/10 </span></li>
-                    <li>Score: <span class="score">0</span></li>
-                </ul>
-            </div>
+             <ul>
+                  <li>Question: <span class="questionNumber">0/10 </span></li>
+                  <li>Score: <span class="score">0</span></li>
+             </ul>
         </header>
-        <main role="quiz">
-            <div class="textContainer">
-                <section class="backgroundSection">
-                    
-                        <h1>Question Prompt</h1>
-                        <img src="images/mickey2.png" alt="hiddenMickey" class="hiddenMickey">
-                        <button type="button" class="nextButton"> Begin</button>
-                    
-                </section>
-                
+        
+        
+        <main role="quizSection" class="backgroundSection">
+           
+            <div class="start">
+                <h1>Think you know Disney</h1>
+                <a href="#" class="startButton">Start Quiz</a>
             </div>
+            
+            <div class="quiz">
+                    <h2>Question Title</h2>
+                    <ul>
+                        <li>choice</li>
+                        <li>choice</li>
+                        <li>choice</li>
+                        <li>choice</li>
+                        <li>choice</li>
+                    </ul>
+                    <a href="#">Submit</a>
+            </div>
+            <div class="summary">
+                <h2>Summary Screen</h2>
+                <p>Yay You got x out of y correct!!!</p>
+                <a href="#">Restart Quiz</a>
+            </div>
+                
+            
+            <img src="images/mickey2.png" alt="hiddenMickey" class="hiddenMickey">
+            
             <div class="quizQuestion"></div>
         </main>
+
+
+
+
         <footer class="bgFooter">
             <a href="index.html" class="homeIcon">
                 <img src="images/donaldDuck.png" alt="donaldResetIcon" class="donaldDuck">
             </a>
         </footer>
+
+
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script scr="main.js"></script>
     </body>
