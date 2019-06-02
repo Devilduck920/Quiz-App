@@ -1,3 +1,11 @@
+function hello(){
+    console.log('hello');
+}
+hello();
+
+
+
+/*
 const questions = [
     {
         question: 'What is the name of Ariel\'s prince?',
@@ -35,7 +43,7 @@ const questions = [
         correctAnswer: 0
     },
     {
-        question: 'What is the name of the dog from \'COCO\'?'
+        question: 'What is the name of the dog from \'COCO\'?',
         answers:['Chico','Dante','Doug','Pongo','Gabo'],
         correctAnswer: 1
     },
@@ -50,3 +58,20 @@ const questions = [
         correctAnswer: 4 
     }
 ];
+let score = 0;
+let currentQuestion = 0;
+
+function startQuiz() {
+    
+}
+function showQuestion() {
+    
+}
+function checkAnswer() {
+    
+}
+function showSummary(){
+
+}
+
+*/
