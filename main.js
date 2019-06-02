@@ -50,27 +50,3 @@ const questions = [
         correctAnswer: 4 
     }
 ];
-let currentQuestion = 0;
-let score = 0;
-
-
-    $('.backgroundSection').on('click','.startButton',function(e){
-        e.preventDefault();
-        $('.start').hide();
-        $('.quiz').show();
-    })
-
-
-
-function startQuiz(){
-
-}
-function showQuestion(){
-
-}
-function checkAnswer(){
-
-}
-function showSummary(){
-
-}

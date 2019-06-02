@@ -19,7 +19,6 @@ body{
 }
 .backgroundSection {
     color:rgb(253, 231, 34);
-    border: 1px black solid;
     background-color: rgba(127, 132, 182, 0.431);
     height:60vh;
     border-radius: 5px;
@@ -28,13 +27,35 @@ body{
 }
 h1{
     font-size:45px;
-    padding-top:75px;
+    padding:45px 0 45px 0;
+}
+.startDiv{
+    margin:0 0 15px 0;
+
+}
+
+.startButton{
+    font-weight:bold;
+    border-radius: 5px;
+    font-size: 20px;
+    margin:15px 0 15px 0;
+    padding:10px;
+    background-color:rgb(21, 194, 179);
+    text-decoration:none;
+}
+
+.startButton:hover{
+    opacity:0.7;
+}
+.startButton:active{
+    opacity:0.5;
 }
 .quiz, .summary{
     display:none;
 }
 
 .hiddenMickey{
+    margin:5px 0 5px 0 ;
     height:50px;
     opacity:0.0;
 }
