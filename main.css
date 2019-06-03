@@ -12,13 +12,14 @@ body{
 .headerRow{
     background-color:rgb(216, 187, 106);
     height:55px;
+    padding-top:8px;
     border-radius: 5px;
     margin: 2% 2% 10% 2%;
-    font-size: 23px;
+    font-size: 32px;
     font-weight:bold;
 }
 .backgroundSection {
-    color:rgb(253, 231, 34);
+    color:navy;
     background-color: rgba(127, 132, 182, 0.431);
     height:60vh;
     border-radius: 5px;
@@ -27,19 +28,36 @@ body{
 }
 h1{
     font-size:45px;
+}
+h2{
+    font-size:35px;
+}
+h2, h1{
     padding:45px 0 45px 0;
 }
-.start{
-    margin:0 0 15px 0;
-
+ul{
+    margin-bottom:45px;
 }
-
+.quiz li{
+    cursor: pointer;
+    padding: 5px;
+    margin:10px 40% 10px 40%;
+    border:1px solid rgb(2, 162, 255);
+    border-radius:5px;
+}
+.selected{
+    background-color:rgb(105, 238, 160);
+    margin:0 380px;
+}
+.quiz li:hover , .selected{
+    font-weight:bold;
+    font-size:18px;
+}
 .startButton{
     font-weight:bold;
     border-radius: 5px;
     font-size: 20px;
-    margin:15px 0 15px 0;
-    padding:10px;
+    padding:8px;
     background-color:rgb(21, 194, 179);
     text-decoration:none;
 }
