@@ -79,11 +79,16 @@ $('.summary a').click(function(e){
     });
 
 })
+
+//                      this is what i added to remove the actual quiz so i could come up with a correct/incorrect page
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function correctResponse(){
     $('.quiz h2, ul, a').hide();
-
 }
-
+function incorrectResponse(){
+    $('.quiz h2, ul, a').hide();
+}
+///////////////////////////////////////////////////////////////////////////////////////////////// KEEP GOING DOWN ////////////////
 function updateNumber() {
     $('.headerRow').text(`Question: ${currentQuestion + 1}/10`);
 }
@@ -100,9 +105,15 @@ function checkAnswer(guess) {
     let question = questions[currentQuestion];
     if(question.correct === guess){
         score++;
-    }
+    ////////////////////// this is where i thought id have to add the response prompt//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     correctResponse()
-    currentQuestion++;
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    } else{
+    incorrectResponse();    
+    }
+    //////////////// IT PROBALY HAS SOMETHING TO DO WITH THE currentQuestion++ but i couldnt figure a way around it
+    currentQuestion++; 
+    
     if(currentQuestion >= questions.length ){
         showSummary();
     } else {
