@@ -1,5 +1,5 @@
-let score = 0;
-let currentQuestion = 0;
+var score = 0;
+var currentQuestion = 0;
 const questions = [
     {
         title: 'What is the name of Ariel\'s prince?',
@@ -78,10 +78,6 @@ $('.summary a').click(function(e){
     });
 
 })
-function updateQuestionNumber() {
-    let question = questions[currentQuestion];
-}
-
 function showQuestion() {
     let question = questions[currentQuestion];
     $('.quiz h2').text(question.title);
@@ -89,6 +85,7 @@ function showQuestion() {
     for(let i=0; i<question.answers.length; i++){
         $('.quiz ul').append(`<li id="${i}">${question.answers[i]}</li>`);
     }
+    $('.headerRow').text(`Question: ${currentQuestion + 1}/10`);
 }
 function checkAnswer(guess) {
     let question = questions[currentQuestion];
