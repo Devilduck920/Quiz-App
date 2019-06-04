@@ -64,6 +64,7 @@ $('.quiz ul').on('click', 'li', function(){
     $('.selected').removeClass()
     $(this).toggleClass('selected')
 })
+
 $('.quiz a').click(function(e){
     e.preventDefault();
     if($('li.selected').length){
@@ -78,6 +79,14 @@ $('.summary a').click(function(e){
     });
 
 })
+function correctResponse(){
+    $('.quiz h2, ul, a').hide();
+
+}
+
+function updateNumber() {
+    $('.headerRow').text(`Question: ${currentQuestion + 1}/10`);
+}
 function showQuestion() {
     let question = questions[currentQuestion];
     $('.quiz h2').text(question.title);
@@ -85,13 +94,14 @@ function showQuestion() {
     for(let i=0; i<question.answers.length; i++){
         $('.quiz ul').append(`<li id="${i}">${question.answers[i]}</li>`);
     }
-    $('.headerRow').text(`Question: ${currentQuestion + 1}/10`);
+    updateNumber()
 }
 function checkAnswer(guess) {
     let question = questions[currentQuestion];
     if(question.correct === guess){
         score++;
     }
+    correctResponse()
     currentQuestion++;
     if(currentQuestion >= questions.length ){
         showSummary();
