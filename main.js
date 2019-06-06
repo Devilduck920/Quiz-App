@@ -52,22 +52,22 @@ const questions = [
         correct: 4 
     }
 ];
-
+// START QUIZ
  $('.start a').on('click', function(e){
     e.preventDefault();
     $('.start').hide();
     $('.quiz').show();
     showQuestion();
 });
-
+//HIGHLIGHT ANSWER SELECTED
 $('.quiz ul').on('click', 'li', function(){
     $('.selected').removeClass()
     $(this).toggleClass('selected')
 })
-
+//if selected equals 1
 $('.quiz a').click(function(e){
     e.preventDefault();
-    if($('li.selected').length){
+    if($('li.selected').length == true){
         let guess = parseInt($('li.selected').attr('id'));
         checkAnswer(guess);        
     } else {
@@ -79,19 +79,12 @@ $('.summary a').click(function(e){
     });
 
 })
-
-//                      this is what i added to remove the actual quiz so i could come up with a correct/incorrect page
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-function correctResponse(){
-    $('.quiz h2, ul, a').hide();
-}
-function incorrectResponse(){
-    $('.quiz h2, ul, a').hide();
-}
-///////////////////////////////////////////////////////////////////////////////////////////////// KEEP GOING DOWN ////////////////
+///////////////////////////////////////////////////////////////////// FUNCTIONS 
 function updateNumber() {
-    $('.headerRow').text(`Question: ${currentQuestion + 1}/10`);
+    $('.headerRow').text(`Question: ${currentQuestion+1}/10`);
+
 }
+
 function showQuestion() {
     let question = questions[currentQuestion];
     $('.quiz h2').text(question.title);
@@ -99,26 +92,37 @@ function showQuestion() {
     for(let i=0; i<question.answers.length; i++){
         $('.quiz ul').append(`<li id="${i}">${question.answers[i]}</li>`);
     }
-    updateNumber()
+    
 }
+/*
+function correctPage(){
+    $('.quiz').hide();
+}
+*/
+//function feedbackPage() {
+    //$('.quiz > li').hide();
+
+//}
+
 function checkAnswer(guess) {
     let question = questions[currentQuestion];
     if(question.correct === guess){
-        score++;
-    ////////////////////// this is where i thought id have to add the response prompt//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    correctResponse()
-    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        score++; 
+        alert('CORRECT!')
     } else{
-    incorrectResponse();    
+        question.correct !== guess
+        alert('WRONG!!')
     }
-    //////////////// IT PROBALY HAS SOMETHING TO DO WITH THE currentQuestion++ but i couldnt figure a way around it
-    currentQuestion++; 
+    currentQuestion++;
     
+
     if(currentQuestion >= questions.length ){
         showSummary();
     } else {
-    showQuestion();
+        updateNumber();
+        showQuestion();
     }
+
 }
 function showSummary(){
     $('.quiz').hide();

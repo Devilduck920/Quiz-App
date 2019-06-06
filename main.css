@@ -7,7 +7,7 @@
     font-family: 'Courier New', Courier, monospace;
 }
 body{
-    background-color: rgba(173, 216, 230, 0.781);
+    background-color: rgb(163, 232, 255);
 }
 .headerRow{
     background-color:rgb(216, 187, 106);
@@ -17,10 +17,11 @@ body{
     margin: 2% 2% 10% 2%;
     font-size: 32px;
     font-weight:bold;
+    wrap
 }
 .backgroundSection {
     color:navy;
-    background-color: rgba(127, 132, 182, 0.431);
+    background-color: rgba(127, 132, 182, 0.76);
     height:60vh;
     border-radius: 5px;
     margin: 0 2% 0 2%;
@@ -35,17 +36,19 @@ h2{
 h2, h1{
     padding:45px 0 45px 0;
 }
-ul{
+{
     margin-bottom:45px;
+    box-sizing:border-box;
 }
-.quiz li{
+.quiz ul li {
     cursor: pointer;
     padding: 5px;
     margin:10px 40% 10px 40%;
-    border:1px solid rgb(2, 162, 255);
+    border:2px solid rgba(162, 2, 255, 0.335);
     border-radius:5px;
 }
 .selected{
+    border:2px solid rgba(162, 2, 255, 0.335);
     background-color:rgb(105, 238, 160);
     margin:0 380px;
 }
