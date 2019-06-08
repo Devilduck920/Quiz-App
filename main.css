@@ -19,7 +19,7 @@ body{
 .backgroundSection {
     background-color:rgb(255, 202, 123);
     color:#A31A17 ;
-    height:65%;
+    height:100000;
 }
 h1{
     font-size:2.5rem;
@@ -36,12 +36,13 @@ main{
 }
 .quiz ul li {
     cursor:pointer;
-    margin:1% 15%;
+    margin:1% 30%;
     padding:5px;
-    border:1.5px solid #EB7609;  
+    border:0.5px solid #EB7609;
 }
 .selected{
-    background-color:#FFA51A
+    background-color:#FFA51A;
+    border:2.5px solid red;
 }
 main a{
     margin-top:3%;
@@ -52,6 +53,9 @@ main a{
     padding:12px;
     background-color:#EB6850;
     color:black;
+}
+.bgFooter{
+    height:10%;
 }
 .donaldDuck{
     margin-top:3%;
@@ -71,4 +75,10 @@ a.homeIcon:hover{
 }
 a.homeIcon:active{
     opacity:0.6;
+}
+.quiz ul li:hover {
+    border:2px solid rgba(255, 0, 0, 0.554);
+}
+.quiz ul li:active {
+    ;
 }

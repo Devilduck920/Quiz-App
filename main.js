@@ -82,8 +82,8 @@ $('.summary a').click(function(e){
 
 });
 ///////////////////////////////////////////////////////////////////////////////////FUNCTIONS 
-function updateNumber() {
-    $('.headerRow .questionNumber').text(`Question: ${currentQuestion+1}/10`);
+function updateNumber() {    $('.headerRow .questionNumber').text(`Question: ${c
+urrentQuestion+1}/10`);
 };
 function updateScore() {
     $('.headerRow .scoreBoard').text(`Score: ${score}`);
@@ -94,7 +94,7 @@ function showQuestion() {
     $('.quiz ul').html('');
     updateNumber();
     for(let i=0; i<question.answers.length; i++){
-        $('.quiz ul').append(`<li role="answer choice ${i+1}" id="${i}"><a href="#">${question.answers[i]}</a></li>`);
+        $('.quiz ul').append(`<li role="answer choice ${i+1}" id="  ${i}"><a href="#">${question.answers[i]}</a></li>`);
     } 
 };
 function checkAnswer(guess) {
