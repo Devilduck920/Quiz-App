@@ -3,63 +3,59 @@
     margin:0;
     text-align: center;
     list-style: none;
-    box-sizing: border-box;
     font-family: 'Courier New', Courier, monospace;
+    text-decoration:none;
+    border-radius: 5px;
 }
 body{
-    background-color: rgb(163, 232, 255);
+    background-color: rgba(232, 152, 86, 0.815);
+
 }
 .headerRow{
-    background-color:rgb(216, 187, 106);
-    height:55px;
-    padding-top:8px;
-    border-radius: 5px;
-    margin: 2% 2% 10% 2%;
-    font-size: 32px;
+    background-color:#EB6850;
+    font-size: 1.5rem;
     font-weight:bold;
-    wrap
 }
 .backgroundSection {
-    color:navy;
-    background-color: rgba(127, 132, 182, 0.76);
-    height:60vh;
-    border-radius: 5px;
-    margin: 0 2% 0 2%;
-    padding-bottom:25px;
+    background-color:rgb(255, 202, 123);
+    color:#A31A17 ;
+    height:65%;
 }
 h1{
-    font-size:45px;
+    font-size:2.5rem;
+    margin-bottom: 10%;
 }
 h2{
-    font-size:35px;
+    font-size:1.5rem;
 }
-h2, h1{
-    padding:45px 0 45px 0;
+main{
+    padding:5%;
 }
-
+.quiz ul{
+    margin-bottom:8%;
+}
 .quiz ul li {
-    cursor: pointer;
-    padding: 5px;
-    margin:10px 40% 10px 40%;
-    border:2px solid rgba(162, 2, 255, 0.335);
-    border-radius:5px;
+    cursor:pointer;
+    margin:1% 15%;
+    padding:5px;
+    border:1.5px solid #EB7609;  
 }
 .selected{
-    border:2px solid rgba(162, 2, 255, 0.335);
-    background-color:rgb(105, 238, 160);
-    margin:0 380px;
+    background-color:#FFA51A
 }
-.quiz li:hover , .selected{
-    font-weight:bold;
-    font-size:18px;
+main a{
+    margin-top:3%;
 }
 .startButton{
-    font-weight:bold;
-    border-radius: 5px;
+    font-weight:bolder;
     font-size: 20px;
-    padding:8px;
-    background-color:rgb(21, 194, 179);
-    text-decoration:none;
+    padding:12px;
+    background-color:#EB6850;
+    color:black;
+}
+.donaldDuck{
+    margin-top:3%;
+    width:80px;
 }
 .startButton:hover{
     opacity:0.7;
@@ -70,23 +66,9 @@ h2, h1{
 .quiz, .summary{
     display:none;
 }
-.hiddenMickey{
-    margin:5px 0 5px 0 ;
-    height:50px;
-    opacity:0.0;
-}
-.hiddenMickey:hover{
-    opacity:1.0;
-}
 a.homeIcon:hover{
     opacity:0.8;
 }
 a.homeIcon:active{
     opacity:0.6;
-}
-.donaldDuck{
-    position:relative;
-        top:5px;
-    height:95px;
-    width:95px;
 }

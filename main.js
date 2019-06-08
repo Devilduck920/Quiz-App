@@ -13,12 +13,12 @@ const questions = [
     },
     {
         title: 'Who is the villian in \'Sleeping Beauty\'?',
-        answers:['Ursala','Malificent','Hades','Cuella De Vil','Gabo'],
+        answers:['Ursala','Maleficent','Hades','Cuella De Vil','Gabo'],
         correct: 1
     },
     {
         title: 'What Character says they have a snake in their boot in Toy Story?',
-        answers:['Buzz','Boo Peep','Woody','Mr. Potato Head','Gabo'],
+        answers:['Buzz','Bo Peep','Woody','Mr. Potato Head','Gabo'],
         correct: 2
     },
     {
@@ -28,17 +28,17 @@ const questions = [
     },
     {
         title: 'From Disney\'s \'UP\'What type of soda is the Ellie Badge?',
-        answers:['Orange','Grape','Cherry','Lime','Gabo'],
+        answers:['Orange','Grape','Cherry','Lime','Gup'],
         correct: 1
     },
     {
         title: 'How many dogs do the dogs Pongo and Purdy have?',
-        answers:['101','15','7','10','Gabo'],
+        answers:['101','15','7','10','18'],
         correct: 0
     },
     {
-        title: 'What is the name of the dog from \'COCO\'?',
-        answers:['Chico','Dante','Doug','Pongo','Gabo'],
+        title: 'What is the name of the dog from\'COCO\'?',
+        answers:['Chico','Dante','Doug','Pongo','Bonson'],
         correct: 1
     },
     {
@@ -58,6 +58,7 @@ const questions = [
     $('.start').hide();
     $('.quiz').show();
     showQuestion();
+    
 });
 //HIGHLIGHT ANSWER SELECTED
 $('.quiz ul').on('click', 'li', function(){
@@ -72,58 +73,47 @@ $('.quiz a').click(function(e){
         checkAnswer(guess);        
     } else {
         alert('Please select an answer')
-    }
+    };
+//reset quiz clickHandle
 $('.summary a').click(function(e){
      e.preventDefault();
     restartQuiz();
     });
 
-})
-///////////////////////////////////////////////////////////////////// FUNCTIONS 
+});
+///////////////////////////////////////////////////////////////////////////////////FUNCTIONS 
 function updateNumber() {
-    $('.headerRow').text(`Question: ${currentQuestion+1}/10`);
-
-}
-
+    $('.headerRow .questionNumber').text(`Question: ${currentQuestion+1}/10`);
+};
+function updateScore() {
+    $('.headerRow .scoreBoard').text(`Score: ${score}`);
+};
 function showQuestion() {
     let question = questions[currentQuestion];
     $('.quiz h2').text(question.title);
     $('.quiz ul').html('');
+    updateNumber();
     for(let i=0; i<question.answers.length; i++){
-        $('.quiz ul').append(`<li id="${i}">${question.answers[i]}</li>`);
-    }
-    
-}
-/*
-function correctPage(){
-    $('.quiz').hide();
-}
-*/
-//function feedbackPage() {
-    //$('.quiz > li').hide();
-
-//}
-
+        $('.quiz ul').append(`<li role="answer choice ${i+1}" id="${i}"><a href="#">${question.answers[i]}</a></li>`);
+    } 
+};
 function checkAnswer(guess) {
     let question = questions[currentQuestion];
     if(question.correct === guess){
         score++; 
-        alert('CORRECT!')
+        updateScore();
+        alert('CORRECT!');
     } else{
         question.correct !== guess
         alert('WRONG!!')
-    }
+    }  
     currentQuestion++;
-    
-
-    if(currentQuestion >= questions.length ){
+      if(currentQuestion >= questions.length ){
         showSummary();
     } else {
-        updateNumber();
         showQuestion();
     }
-
-}
+};
 function showSummary(){
     $('.quiz').hide();
     $('.summary').show();
