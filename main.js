@@ -58,7 +58,6 @@ const questions = [
     $('.start').hide();
     $('.quiz').show();
     showQuestion();
-    
 });
 //HIGHLIGHT ANSWER SELECTED
 $('.quiz ul').on('click', 'li', function(){
@@ -74,16 +73,17 @@ $('.quiz a').click(function(e){
     } else {
         alert('Please select an answer')
     };
+});
 //reset quiz clickHandle
 $('.summary a').click(function(e){
      e.preventDefault();
     restartQuiz();
     });
 
-});
+
 ///////////////////////////////////////////////////////////////////////////////////FUNCTIONS 
-function updateNumber() {    $('.headerRow .questionNumber').text(`Question: ${c
-urrentQuestion+1}/10`);
+function updateNumber() {    
+    $('.headerRow .questionNumber').text(`Question: ${currentQuestion+1}/10`);
 };
 function updateScore() {
     $('.headerRow .scoreBoard').text(`Score: ${score}`);
