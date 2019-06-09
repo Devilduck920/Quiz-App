@@ -9,7 +9,6 @@
 }
 body{
     background-color: rgba(232, 152, 86, 0.815);
-
 }
 .headerRow{
     background-color:#EB6850;
@@ -23,10 +22,11 @@ body{
 }
 h1{
     font-size:2.5rem;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
 }
 h2{
     font-size:1.5rem;
+    margin:5%;
 }
 main{
     padding:5%;
@@ -45,7 +45,7 @@ main{
     border:2.5px solid red;
 }
 main a{
-    margin-top:3%;
+    margin-top:30%;
 }
 .startButton{
     font-weight:bolder;

@@ -75,7 +75,7 @@ $('.quiz a').click(function(e){
     };
 });
 //reset quiz clickHandle
-$('.summary a').click(function(e){
+$('.summary .startButton').click(function(e){
      e.preventDefault();
     restartQuiz();
     });
@@ -117,7 +117,7 @@ function checkAnswer(guess) {
 function showSummary(){
     $('.quiz').hide();
     $('.summary').show();
-    $('.summary p').text('You got ' +score+ ' out of ' +questions.length+' correct!');
+    $('.summary h2').text(`You got ${score} out of ${questions.length} correct!`);
 }
 function restartQuiz(){
     $('.summary').hide();
