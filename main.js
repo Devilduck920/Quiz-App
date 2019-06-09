@@ -34,7 +34,7 @@ const questions = [
     {
         title: 'How many dogs do the dogs Pongo and Purdy have?',
         answers:['101','15','7','10','18'],
-        correct: 0
+        correct: 1
     },
     {
         title: 'What is the name of the dog from\'COCO\'?',
