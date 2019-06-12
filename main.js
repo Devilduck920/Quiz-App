@@ -1,128 +1,170 @@
-var score = 0;
-var currentQuestion = 0;
-const questions = [
-    {
-        title: 'What is the name of Ariel\'s prince?',
-        answers:['Prince Philip','Prince Naveen','Prince Eric','Prince Ali','Prince Gabo'],
-        correct: 2
-    },
-    {
-        title: 'What is the name of the female mouse in \'The Rescuers\'?',
-        answers:['Bianca','Bernadette','Brittany','Bridget','Gabo'],
-        correct: 0
-    },
-    {
-        title: 'Who is the villian in \'Sleeping Beauty\'?',
-        answers:['Ursala','Maleficent','Hades','Cuella De Vil','Gabo'],
-        correct: 1
-    },
-    {
-        title: 'What Character says they have a snake in their boot in Toy Story?',
-        answers:['Buzz','Bo Peep','Woody','Mr. Potato Head','Gabo'],
-        correct: 2
-    },
-    {
-        title: 'Which character from Disney\'s Pixar \'Finding Nemo\' suffers from short term memory loss?',
-        answers:['Marlin','Nemo','Dory','Bruce','Gabo'],
-        correct: 2
-    },
-    {
-        title: 'From Disney\'s \'UP\'What type of soda is the Ellie Badge?',
-        answers:['Orange','Grape','Cherry','Lime','Gup'],
-        correct: 1
-    },
-    {
-        title: 'How many dogs do the dogs Pongo and Purdy have?',
-        answers:['101','15','7','10','18'],
-        correct: 1
-    },
-    {
-        title: 'What is the name of the dog from\'COCO\'?',
-        answers:['Chico','Dante','Doug','Pongo','Bonson'],
-        correct: 1
-    },
-    {
-        title: 'What is the phrase Timon and Pumba taught Simba from \'Lion King\'?',
-        answers:['Hakuna Matata','No Way Jose!','You have our blessing','Kill the beast','Gabo Gabo'],
-        correct: 0 
-    },
-    {
-        title: 'Which one of these is NOT a 7 dwarf?',
-        answers:['Dopey','Happy','Sleepy','Doc','Gabo'],
-        correct: 4 
-    }
-];
-// START QUIZ
- $('.start a').on('click', function(e){
-    e.preventDefault();
-    $('.start').hide();
-    $('.quiz').show();
-    showQuestion();
-});
-//HIGHLIGHT ANSWER SELECTED
-$('.quiz ul').on('click', 'li', function(){
-    $('.selected').removeClass()
-    $(this).toggleClass('selected')
-})
-//if selected equals 1
-$('.quiz a').click(function(e){
-    e.preventDefault();
-    if($('li.selected').length == true){
-        let guess = parseInt($('li.selected').attr('id'));
-        checkAnswer(guess);        
-    } else {
-        alert('Please select an answer')
-    };
-});
-//reset quiz clickHandle
-$('.summary .startButton').click(function(e){
-     e.preventDefault();
-    restartQuiz();
-    });
 
-
-///////////////////////////////////////////////////////////////////////////////////FUNCTIONS 
-function updateNumber() {    
-    $('.headerRow .questionNumber').text(`Question: ${currentQuestion+1}/10`);
-};
-function updateScore() {
-    $('.headerRow .scoreBoard').text(`Score: ${score}`);
-};
-function showQuestion() {
-    let question = questions[currentQuestion];
-    $('.quiz h2').text(question.title);
-    $('.quiz ul').html('');
-    updateNumber();
-    for(let i=0; i<question.answers.length; i++){
-        $('.quiz ul').append(`<li role="answer choice ${i+1}" id="  ${i}"><a href="#">${question.answers[i]}</a></li>`);
-    } 
-};
-function checkAnswer(guess) {
-    let question = questions[currentQuestion];
-    if(question.correct === guess){
-        score++; 
-        updateScore();
-        alert('CORRECT!');
-    } else{
-        question.correct !== guess
-        alert('WRONG!!')
-    }  
-    currentQuestion++;
-      if(currentQuestion >= questions.length ){
-        showSummary();
-    } else {
-        showQuestion();
-    }
-};
-function showSummary(){
-    $('.quiz').hide();
-    $('.summary').show();
-    $('.summary h2').text(`You got ${score} out of ${questions.length} correct!`);
+let questionNumber = 0;
+let score = 0;
+const STORE = [
+{
+  question: 'What is the name of Ariel\'s prince?',
+  answers:['Prince Philip','Prince Naveen','Prince Eric','Prince Ali','Prince Gabo'],
+  correctAnswer: 'Prince Eric'
+},
+{
+  question: 'What is the name of the female mouse in \'The Rescuers\'?',
+  answers:['Bianca','Bernadette','Brittany','Bridget','Gabo'],
+  correctAnswer: 'Bernadette'
+},
+{
+  question: 'Who is the villian in \'Sleeping Beauty\'?',
+  answers:['Ursala','Maleficent','Hades','Cuella De Vil','Gabo'],
+  correctAnswer: 'Maleficent'
+},
+{
+  question: 'What Character says they have a snake in their boot in Toy Story?',
+  answers:['Buzz','Bo Peep','Woody','Mr. Potato Head','Gabo'],
+  correctAnswer: 'Woody'
+},
+{
+  question: 'Which character from Disney\'s Pixar \'Finding Nemo\' suffers from short term memory loss?',
+  answers:['Marlin','Nemo','Dory','Bruce','Gabo'],
+  correctAnswer: 'Dory'
+},
+{
+  question: 'From Disney\'s \'UP\' what type of soda is the Ellie Badge?',
+  answers:['Orange','Grape','Cherry','Lime','Gup'],
+  correctAnswer: 'Grape'
+},
+{
+  question: 'How many dogs do the dogs Pongo and Purdy have?',
+  answers:['101','15','7','10','18'],
+  correctAnswer: '15'
+},
+{
+  question: 'What is the name of the dog from\'COCO\'?',
+  answers:['Chico','Dante','Doug','Pongo','Bonson'],
+  correctAnswer: 'Dante'
+},
+{
+  question: 'What is the phrase Timon and Pumba taught Simba from \'Lion King\'?',
+  answers:['Hakuna Matata','No Way Jose!','You have our blessing','Kill the beast','Gabo Gabo'],
+  correctAnswer: 'Hakuna Matata' 
+},
+{
+  question: 'Which one of these is NOT a 7 dwarf?',
+  answers:['Dopey','Happy','Sleepy','Doc','Gabo'],
+  correctAnswer: 'Gabo'
 }
-function restartQuiz(){
-    $('.summary').hide();
-    $('.quiz').show();
-    score = 0;
-    currentQuestion = 0;
-    showQuestion();
-};
+];
+function generateQuestion () {
+  if (questionNumber < STORE.length) {
+    return `<div class="question ${questionNumber}">
+    <h2>${STORE[questionNumber].question}</h2>
+    <form>
+    <label class="answerOption">
+    <input type="radio" value="${STORE[questionNumber].answers[0]}" name="answer" required>
+    <span>${STORE[questionNumber].answers[0]}</span>
+    </label><br>
+    <label class="answerOption">
+    <input type="radio" value="${STORE[questionNumber].answers[1]}" name="answer" required>
+    <span>${STORE[questionNumber].answers[1]}</span>
+    </label><br>
+    <label class="answerOption">
+    <input type="radio" value="${STORE[questionNumber].answers[2]}" name="answer" required>
+    <span>${STORE[questionNumber].answers[2]}</span>
+    </label><br>
+    <label class="answerOption">
+    <input type="radio" value="${STORE[questionNumber].answers[3]}" name="answer" required>
+    <span>${STORE[questionNumber].answers[3]}</span>
+    </label><br>
+    <label class="answerOption">
+    <input type="radio" value="${STORE[questionNumber].answers[4]}" name="answer" required>
+    <span>${STORE[questionNumber].answers[4]}</span>
+    </label><br>
+    <button type="submit" class="submitButton">Submit</button>
+    </form>
+    </div>`;
+} else {
+    renderResults();
+    restartQuiz();
+    $('.questionNumber').text(10)
+  }
+}
+function changeQuestionNumber () {
+    questionNumber ++;
+  $('.questionNumber').text(questionNumber+1);
+}
+
+function changeScore () {
+  score ++;
+}
+
+function startQuiz () {
+  $('.quizStart').on('click', '.startButton', function (e) {
+    $('.quizStart').remove();
+    $('.questionAnswerForm').css('display', 'block');
+    $('.questionNumber').text(1);
+});
+}
+function renderQuestion () {
+  $('.questionAnswerForm').html(generateQuestion());
+}
+function userSelectAnswer () {
+  $('form').on('submit', function (e) {
+    e.preventDefault();
+    let selected = $('input:checked');
+    let answer = selected.val();
+    let correctAnswer = `${STORE[questionNumber].correctAnswer}`;
+    if (answer === correctAnswer) {
+
+      ifAnswerIsCorrect();
+    } else {
+
+      ifAnswerIsWrong();
+    }
+  });
+}
+function ifAnswerIsCorrect () {
+  userAnswerFeedbackCorrect();
+  updateScore();
+}
+
+function ifAnswerIsWrong () {
+  userAnswerFeedbackWrong();
+}
+function userAnswerFeedbackCorrect () {
+  let correctAnswer = `${STORE[questionNumber].correctAnswer}`;
+  $('.questionAnswerForm').html(`<div class=" question"><p><b>You got it right!</b></p><button type=button class=" nextButton">Next</button></div>`);
+}
+function userAnswerFeedbackWrong () {
+  let correctAnswer = `${STORE[questionNumber].correctAnswer}`;
+  $('.questionAnswerForm').html(`<div class=" question "><p><b>You got it wrong</b><br>correct answer: <span>"${correctAnswer}"</span></p><button type=button class=" nextButton">Next</button></div>`);
+}
+function updateScore () {
+  changeScore();
+  $('.score').text(score);
+}
+function renderResults () {
+  if (score >= 5) {
+    $('.questionAnswerForm').html(`<div class="question"><h3>YOU'RE TOO COOL FOR SCHOOL!</h3><p> ${score} / 10</p><button class="restartButton">Restart Quiz</button></div>`);
+  } else {
+    $('.questionAnswerForm').html(`<div class="question"><h2>UHM, TRY AGAIN NEXT TIME !</h2><p>${score} / 10</p><button class="restartButton">Restart Quiz</button></div>`);
+  }
+}
+function renderNextQuestion () {
+  $('main').on('click', '.nextButton', function (e) {
+    changeQuestionNumber();
+    renderQuestion();
+    userSelectAnswer();
+  });
+}
+function restartQuiz () {
+  $('main').on('click', '.restartButton', function (e) {
+    location.reload();
+  });
+}
+function createQuiz () {
+  startQuiz();
+  renderQuestion();
+  userSelectAnswer();
+  renderNextQuestion();
+}
+
+$(createQuiz);

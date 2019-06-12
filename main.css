@@ -1,81 +1,97 @@
-*{
-    padding:0;
-    margin:0;
-    text-align: center;
+* {
+
     list-style: none;
-    font-family: 'Courier New', Courier, monospace;
-    text-decoration:none;
-    border-radius: 5px;
+    margin: 0 2px;
+    padding: 0;
+    color:black;
+    text-align: center;
+    box-sizing:border-box;
+    border-radius:10%;
+    text-transform: uppercase;
 }
 body{
-    background-color: rgba(232, 152, 86, 0.815);
+    background-color:rgba(255, 94, 0, 0.616);
 }
-.headerRow{
+header {
     background-color:#EB6850;
-    font-size: 1.5rem;
-    font-weight:bold;
+    width: 100%;
+    font-size: 20px;
 }
-.backgroundSection {
+header ul {
+    text-align: center;
+}
+.quizStart {
+    width: 100%;
+    margin-top: 150px;
+    padding:20px 0;
     background-color:rgb(255, 202, 123);
-    color:#A31A17 ;
-    height:100000;
 }
-h1{
-    font-size:2.5rem;
-    margin-bottom: 5%;
+h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
 }
 h2{
-    font-size:1.5rem;
-    margin:5%;
+    font-size:1.5em;
 }
-main{
-    padding:5%;
+h3 {
+    font-size: 26px;
+    margin-bottom: 20px;
 }
-.quiz ul{
-    margin-bottom:8%;
+span{
+    font-size:1em;
 }
-.quiz ul li {
-    cursor:pointer;
-    margin:1% 30%;
-    padding:5px;
-    border:0.5px solid #EB7609;
+button {
+    font-size: 28px;
+    cursor: pointer;
 }
-.selected{
-    background-color:#FFA51A;
-    border:2.5px solid red;
+.question{
+    background-color:rgb(255, 202, 123); 
+    margin-top: 20px;
 }
-main a{
-    margin:20
+p{
+    margin:20px 0;
+    padding:30px 0;
+    font-size:20px;
+    font-weight:bold;
 }
 .startButton{
-    font-weight:bolder;
-    font-size: 20px;
-    padding:12px;
-    background-color:#EB6850;
-    color:black;
+    line-height:40px;
 }
-.bgFooter{
-    height:10%;
+.nextButton{
+    margin:20px 0;
+}
+.submitButton{
+    margin:10px 0;
+}
+label {
+    font-weight:bold;
+    cursor: pointer;
+    line-height: 36px
+}
+input {
+    width: 16px;
+    height: 16px;
+}
+button {
+    padding: 15px;
+    border: none;
+    background-color: rgb(175, 107, 195);
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.questionAnswerForm {
+    display: none;
+    width: 100%;
 }
 .donaldDuck{
     margin-top:3%;
     width:80px;
 }
-.startButton:hover{
-    opacity:0.7;
+.restartButton {
+    margin-top: 30px
 }
-.startButton:active{
-    opacity:0.5;
-}
-.quiz, .summary{
-    display:none;
-}
-a.homeIcon:hover{
-    opacity:0.8;
-}
-a.homeIcon:active{
-    opacity:0.6;
-}
-.quiz ul li:hover {
-    border:2px solid rgba(255, 0, 0, 0.554);
+label:hover{
+    background-color:rgba(243, 88, 16, 0.479);
 }
