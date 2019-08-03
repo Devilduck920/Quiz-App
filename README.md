@@ -9,3 +9,4 @@ When you reach the end of the quiz you will be notified of your score and see if
 
 TECH USED: HTML, CSS, JAVASCRIPT W/ JQUERY AND AJAX.
 
+![](https://github.com/Devilduck920/portfolio/blob/master/images/quizApp.jpg)
